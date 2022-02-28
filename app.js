@@ -1,21 +1,40 @@
 // get input search input value and dynamic url function 
 const getPhone = () => {
+    // show spinner
+    document.getElementById('spinner').style.display='block'
     const inputField = document.getElementById('search-input').value;
+    if(inputField == ''){
+        // show empty error
+        document.getElementById('empty-input-error').style.display='block'
+        document.getElementById('spinner').style.display='none'
+    }
+   else{
     const url = `https://openapi.programming-hero.com/api/phones?search=${inputField}`;
     fetch(url)
         .then(res => res.json())
         .then(data => displayPhone(data.data))
+        //clear input
     document.getElementById('search-input').value = '';
+    // hide empty input error
+    document.getElementById('empty-input-error').style.display='none'
+    
+
+   }
 }
 
 // display phone function 
 const displayPhone = (phones) => {
-    // search input error handle 
     if (phones.length == 0) {
+        // show search input error handle 
         document.getElementById('input-error').style.display = "block"
+        // hide spinner
+        document.getElementById('spinner').style.display='none'
+
     }
     else {
+        // hide search input error handle
         document.getElementById('input-error').style.display = "none"
+        // get phone section div
         const phonesDiv = document.getElementById('phones');
         // remove old search result
         phonesDiv.textContent = ''
@@ -35,7 +54,9 @@ const displayPhone = (phones) => {
                 </div>
             </div>
             `;
+
             phonesDiv.appendChild(div)
+            document.getElementById('spinner').style.display='none'
         })
     }
 

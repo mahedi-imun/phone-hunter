@@ -29,17 +29,26 @@
           <input id="search-input" type="text" class="form-control" placeholder="search phone" aria-label="search phone"aria-describedby="button-addon2"/>
           <button onclick="getPhone()"class="btn btn-outline-secondary" type="button" id="search-button">Search</button>
         </div>
+        <!-- empty input error handel  -->
+        <h3 id="empty-input-error" class=" text-center text-danger" > empty !! please try agin !! </h3>
       </section>
       <!-- phone details section  -->
       <section>
-        <!-- error handle  -->
+        <!-- can't find error handle  -->
           <h3 id="input-error" class=" text-center text-danger" > your search did not match!! </h3>
           <!-- show details  -->
           <div id="show-details" class=" mb-3 w-50 mx-auto  ">
           </div>
          </section>
       <!-- phone section  -->
-      <section class="mt-5 d-flex flex-column ">
+      <section class="mt-5  ">
+        <!-- loading spinner  -->
+        <div class="d-flex justify-content-center align-content-center">
+          <div id="spinner" class="spinner-grow " role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div>
+        </div>
+        <!-- display phones  -->
         <div id="phones" class="row border-0 g-5">        
         </div>
       </section>
