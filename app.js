@@ -90,21 +90,21 @@ const displayDetails = (product) => {
          
          <ul class="list-group">
             <h5 class="text-center text-info">Sensor Information</h5>
-            <li class="list-group-item"><h6 class="card-text">${product.mainFeatures.sensors[0]} </h6></li>
-            <li class="list-group-item"><h6 class="card-text">${product.mainFeatures.sensors[1]} </h6></li>
-            <li class="list-group-item"><h6 class="card-text">${product.mainFeatures.sensors[2]} </h6></li>
-            <li class="list-group-item"><h6 class="card-text">${product.mainFeatures.sensors[3]} </h6></li>
-            <li class="list-group-item"><h6 class="card-text">${product.mainFeatures.sensors[4]} </h6></li>
-            <li class="list-group-item"><h6 class="card-text">${product.mainFeatures.sensors[5]} </h6></li>
+            <li class="list-group-item"><h6 class="card-text">${product.mainFeatures.sensors[0]?product.mainFeatures.sensors[0]:'sensors not found'} </h6></li>
+            <li class="list-group-item"><h6 class="card-text">${product.mainFeatures.sensors[1]?product.mainFeatures.sensors[1]:'sensors not found'} </h6></li>
+            <li class="list-group-item"><h6 class="card-text">${product.mainFeatures.sensors[2]?product.mainFeatures.sensors[2]:'sensors not found'} </h6></li>
+            <li class="list-group-item"><h6 class="card-text">${product.mainFeatures.sensors[3]?product.mainFeatures.sensors[3]:'sensors not found'} </h6></li>
+            <li class="list-group-item"><h6 class="card-text">${product.mainFeatures.sensors[4]?product.mainFeatures.sensors[4]:'sensors not found'} </h6></li>
+            <li class="list-group-item"><h6 class="card-text">${product.mainFeatures.sensors[5]?product.mainFeatures.sensors[5]:'sensors not found'} </h6></li>
          </ul>
 
          <ul class="list-group">
             <h5 class="text-center text-info"> Others Information </h5>
             <li class="list-group-item"><h6 class="card-text">Bluetooth: ${product.others?.Bluetooth} </h6></li>
-            <li class="list-group-item"><h6 class="card-text">GPS: ${product.others?.GPS} </h6></li>
-            <li class="list-group-item"><h6 class="card-text">Radio: ${product.others?.Radio} </h6></li>
-            <li class="list-group-item"><h6 class="card-text">USB: ${product.others?.USB} </h6></li>
-            <li class="list-group-item"><h6 class="card-text">WLAN: ${product.others?.WLAN} </h6></li>
+            <li class="list-group-item"><h6 class="card-text">GPS: ${product.others.GPS?product.others.GPS:'gps not found'} </h6></li>
+            <li class="list-group-item"><h6 class="card-text">Radio: ${product.others.Radio?product.others.Radio:'radio not found'} </h6></li>
+            <li class="list-group-item"><h6 class="card-text">USB: ${product.others.USB?product.others.USB:'usb not found'} </h6></li>
+            <li class="list-group-item"><h6 class="card-text">WLAN: ${product.others.WLAN?product.others.WLAN:'wlan not found'} </h6></li>
          </ul>
     </div>
     `;
